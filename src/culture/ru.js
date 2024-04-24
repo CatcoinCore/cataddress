@@ -152,7 +152,7 @@
 		"detaillabelpublickeycomp": "Публичный ключ (короткий, 66 символов [0-9A-F]):",
 		"detaillabelprivwif": "Приватный ключ (в формате импорта), 51 символ base58, начинается с '5'",
 		"detaillabelprivwifcomp": "Приватный ключ, короткий, 52 символа base58, начинается с",
-		"detailcompwifprefix": "'K' или 'L'",
+		"detailcompwifprefix": "'N' или 'P'",
 		"detaillabelprivhex": "Приватный Ключ в HEX формате (64 символа [0-9A-F]):",
 		"detaillabelprivb64": "Приватный Ключ в Base64 формате (44 символа):",
 		"detaillabelprivmini": "Приватный Ключ в формате мини (22, 26 или 30 символов, начинается с 'S'):",

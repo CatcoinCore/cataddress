@@ -160,7 +160,7 @@
 		"detaillabelprivwif": "私钥 (WIF格式)<br />(51位base58字符) ",
 		"detaillabelprivwifcomp": "私钥 (WIF格式)<br />(压缩格式，52位base58字符) ",
 		"detailwifprefix": "'5'开头",
-		"detailcompwifprefix": "'K'或'L'开头",
+		"detailcompwifprefix": "'N'或'P'开头",
 		"detaillabelprivhex": "私钥(16进制) (64位[0-9A-F]字符)",
 		"detaillabelprivb64": "私钥(base64) (44位)",
 		"detaillabelpassphrase": "输入BIP38的口令",

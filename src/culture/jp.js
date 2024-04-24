@@ -161,7 +161,7 @@
 		"detaillabelprivwif": "プライベートキー (WIF)<br>(base58コード51文字) 頭文字が",
 		"detaillabelprivwifcomp": "プライベートキー (WIF)<br>(圧縮、base58コード52文字) 頭文字が",
 		"detailwifprefix": "'5'",
-		"detailcompwifprefix": "'K' か 'L'",
+		"detailcompwifprefix": "'N' か 'P'",
 		"detaillabelprivhex": "プライベートキー(16進) (64文字[0-9A-F])",
 		"detaillabelprivb64": "プライベートキー(base64コード) (44文字)",
 		"detaillabelpassphrase": "BIP38パスワード",

@@ -338,11 +338,11 @@ Bitcoin.ECKey = (function () {
 							(/^9[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key));
 	};
 
-	// 52 characters base58, starts with a 'P'
+	// 52 characters base58, starts with a 'N' or 'P'
 	ECKey.isCompressedWalletImportFormat = function (key) {
 		key = key.toString();
 		return (ECKey.privateKeyPrefix == 0x95) ?
-							(/^P[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key)) :
+							(/^[NP][123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key)) :
 							(/^c[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key));
 	};
 
