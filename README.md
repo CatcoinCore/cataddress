@@ -57,7 +57,7 @@ window.QRCode			MIT License
 window.Bitcoin			MIT License
 
 The CatAddress software is available under The MIT License (MIT)
-Copyright (c) 2012-2013 CatAddress
+Copyright (c) 2012-2024 cataddress.org
 Copyright (c) 2012-2013 liteaddress.org
 Copyright (c) 2011-2013 bitaddress.org
 
