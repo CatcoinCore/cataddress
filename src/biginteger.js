@@ -1,5 +1,9 @@
+// Upstream 'BigInteger' here:
+// Original Author: http://www-cs-students.stanford.edu/~tjw/jsbn/
+// Follows 'jsbn' on Github: https://github.com/jasondavies/jsbn
+// Review and Testing: https://github.com/cryptocoinjs/bigi/
 /*!
-* Basic JavaScript BN library - subset useful for RSA encryption. v1.3
+* Basic JavaScript BN library - subset useful for RSA encryption. v1.4
 * 
 * Copyright (c) 2005  Tom Wu
 * All Rights Reserved.
@@ -7,13 +11,16 @@
 * http://www-cs-students.stanford.edu/~tjw/jsbn/LICENSE
 *
 * Copyright Stephan Thomas
-* Copyright bitaddress.org
+* Copyright pointbiz
 */
 
 (function () {
 
 	// (public) Constructor function of Global BigInteger object
 	var BigInteger = window.BigInteger = function BigInteger(a, b, c) {
+		if (!(this instanceof BigInteger))
+			return new BigInteger(a, b, c);
+
 		if (a != null)
 			if ("number" == typeof a) this.fromNumber(a, b, c);
 			else if (b == null && "string" != typeof a) this.fromString(a, 256);
@@ -150,7 +157,7 @@
 		this.t = 1;
 		this.s = (x < 0) ? -1 : 0;
 		if (x > 0) this[0] = x;
-		else if (x < -1) this[0] = x + DV;
+		else if (x < -1) this[0] = x + this.DV;
 		else this.t = 0;
 	};
 
@@ -944,6 +951,7 @@
 	// (public) 1/this % m (HAC 14.61)
 	BigInteger.prototype.modInverse = function (m) {
 		var ac = m.isEven();
+		if (this.signum() === 0) throw new Error('division by zero');
 		if ((this.isEven() && ac) || m.signum() == 0) return BigInteger.ZERO;
 		var u = m.clone(), v = this.clone();
 		var a = nbv(1), b = nbv(0), c = nbv(0), d = nbv(1);
@@ -978,9 +986,9 @@
 			}
 		}
 		if (v.compareTo(BigInteger.ONE) != 0) return BigInteger.ZERO;
-		if (d.compareTo(m) >= 0) return d.subtract(m);
-		if (d.signum() < 0) d.addTo(m, d); else return d;
-		if (d.signum() < 0) return d.add(m); else return d;
+		while (d.compareTo(m) >= 0) d.subTo(m, d);
+		while (d.signum() < 0) d.addTo(m, d);
+		return d;
 	};
 
 
@@ -1162,7 +1170,7 @@
 	// ****** REDUCTION ******* //
 
 	// Modular reduction using "classic" algorithm
-	function Classic(m) { this.m = m; }
+	var Classic = window.Classic = function Classic(m) { this.m = m; }
 	Classic.prototype.convert = function (x) {
 		if (x.s < 0 || x.compareTo(this.m) >= 0) return x.mod(this.m);
 		else return x;
@@ -1177,7 +1185,7 @@
 
 
 	// Montgomery reduction
-	function Montgomery(m) {
+	var Montgomery = window.Montgomery = function Montgomery(m) {
 		this.m = m;
 		this.mp = m.invDigit();
 		this.mpl = this.mp & 0x7fff;
@@ -1228,7 +1236,7 @@
 
 
 	// A "null" reducer
-	function NullExp() { }
+	var NullExp = window.NullExp = function NullExp() { }
 	NullExp.prototype.convert = function (x) { return x; };
 	NullExp.prototype.revert = function (x) { return x; };
 	NullExp.prototype.mulTo = function (x, y, r) { x.multiplyTo(y, r); };
@@ -1239,7 +1247,7 @@
 
 
 	// Barrett modular reduction
-	function Barrett(m) {
+	var Barrett = window.Barrett = function Barrett(m) {
 		// setup Barrett
 		this.r2 = nbi();
 		this.q3 = nbi();
