@@ -8454,7 +8454,7 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 		"singleprint": "Imprimir",
 		"singlelabelbitcoinaddress": "Dirección Catcoin",
 		"singlelabelprivatekey": "Clave privada (formato para importar):",
-		"singletip1": "<b>A Catcoin wallet</b> is as simple as a single pairing of a Catcoin address with it's corresponding Bitcoin private key. Such a wallet has been generated for you in your web browser and is displayed above.", //TODO: please translate
+		"singletip1": "<b>A Catcoin wallet</b> is as simple as a single pairing of a Catcoin address with it's corresponding Catcoin private key. Such a wallet has been generated for you in your web browser and is displayed above.", //TODO: please translate
 		"singletip2": "<b>To safeguard this wallet</b> you must print or otherwise record the Catcoin address and private key. It is important to make a backup copy of the private key and store it in a safe location. This site does not have knowledge of your private key. If you are familiar with PGP you can download this all-in-one HTML page and check that you have an authentic version from the author of this site by matching the SHA256 hash of this HTML with the SHA256 hash available in the signed version history document linked on the footer of this site. If you leave/refresh the site or press the Generate New Address button then a new private key will be generated and the previously displayed private key will not be retrievable.	Your Catcoin private key should be kept a secret. Whomever you share the private key with has access to spend all the catcoins associated with that address. If you print your wallet then store it in a zip lock bag to keep it safe from water. Treat a paper wallet like cash.", //TODO: please translate
 		"singletip3": "<b>Add funds</b> to this wallet by instructing others to send catcoins to your Catcoin address.", //TODO: please translate
 		"singletip4": "<b>Check your balance</b> by going to catchain.info or catcoinwallets.com:3001 and entering your Catcoin address.", //TODO: please translate
@@ -9654,12 +9654,12 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 		"bulklabelcsv": "逗号分隔值：",
 		"bulklabelformat": "编号,地址,私钥(WIF格式)",
 		"bulklabelq1": "什么时候我会需要批量钱包？",
-		"bulka1": "例如，当你建设一个猫币收款网站，需要分别为每一个用户准备一个收款地址时，传统的做法是使用猫币客户端“bitcoind”生成大量的地址，但是不一定所有的网站托管都支持它。另外，你在服务器上运行猫币客户端，也就意味着你的私钥也会保存在服务器上，当骇客攻破服务器时，你的猫币可能会被盗。使用批量钱包一次生成大量的钱包，只把生成的地址放在服务器上，即使服务器被攻破，也不必担心猫币的安全。",
+		"bulka1": "例如，当你建设一个猫币收款网站，需要分别为每一个用户准备一个收款地址时，传统的做法是使用猫币客户端“catcoind”生成大量的地址，但是不一定所有的网站托管都支持它。另外，你在服务器上运行猫币客户端，也就意味着你的私钥也会保存在服务器上，当骇客攻破服务器时，你的猫币可能会被盗。使用批量钱包一次生成大量的钱包，只把生成的地址放在服务器上，即使服务器被攻破，也不必担心猫币的安全。",
 		"bulklabelq2": "我该怎样在我的网站上使用批量钱包接受猫币？",
 		"bulklabela2li1": "    在批量钱包选项卡预生成大量猫币地址（比如，一万个）。把生成的逗号分隔值清单（CSV）复制到一个安全的环境中，注意备份。",
 		"bulklabela2li2": "    把地址列表导入到Web服务器上（注意，<b>不要</b>把私钥部分也一并导入，否则会有被盗的危险）",
 		"bulklabela2li3": "    为你的客户提供一个猫币支付的接口。每当一名客户选择使用猫币支付，你就从你的数据库中提取一个地址，作为该客户专用的“付款地址”，并保存订单信息。",
-		"bulklabela2li4": "接下来你需要一个收款通知，联系相关服务的供应商（谷歌搜索“bitcoin payment notification”），它们可以监视指定地址的资金变动，并通过WebAPI、短信、电邮或者其他方式来提醒你，你也可以通过编程使一切自动化。在http://catcoinwallets.com:3001/address/地址 或者 https://catchain.info/address/地址 查看交易确认数。通常情况下，你能够在30秒之内看见交易，而根据你对安全的要求不同，你可能需要10分钟到1小时的时间等待交易确认。",
+		"bulklabela2li4": "接下来你需要一个收款通知，联系相关服务的供应商（谷歌搜索“catcoin payment notification”），它们可以监视指定地址的资金变动，并通过WebAPI、短信、电邮或者其他方式来提醒你，你也可以通过编程使一切自动化。在http://catcoinwallets.com:3001/address/地址 或者 https://catchain.info/address/地址 查看交易确认数。通常情况下，你能够在30秒之内看见交易，而根据你对安全的要求不同，你可能需要10分钟到1小时的时间等待交易确认。",
 		"bulklabela2li5": "猫币在区块链上稳定之后，你就可以使用在第一步中生成的私钥来花费它们。",
 
 		// brain wallet html
