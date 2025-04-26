@@ -1,4 +1,4 @@
-# address.org
+# cataddress.org
 JavaScript Client-Side Catcoin Wallet Generator
 
 Now Catcoin addresses and their corresponding private key can be conveniently 
